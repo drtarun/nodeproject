@@ -3,6 +3,8 @@ const express = require("express")
 const path = require("path")
 var webdir = path.join(__dirname,"..", "./website1")
 var viewpath = path.join(__dirname,"..", "./src/views")
+var jspath = path.join(__dirname,"..", "./src/js")
+
 console.log(viewpath)
 const app = express()
 app.set('view engine','hbs')
@@ -13,7 +15,7 @@ app.set('views', viewpath)
 app.use(express.static(webdir))
 app.get('', (req, res)=>{
     res.render('index', {
-     'title':'Tarun',
+     'path':jspath,
      'Universiy':'CURAJ'
  })
 })
