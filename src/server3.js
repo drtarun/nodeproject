@@ -2,9 +2,11 @@
 const express = require("express")
 const path = require("path")
 var webdir = path.join(__dirname,"..", "./website1")
-console.log(webdir)
+var viewpath = path.join(__dirname,"..", "./src/views")
+console.log(viewpath)
 const app = express()
 app.set('view engine','hbs')
+app.set('views', viewpath)
 //app.use(express.static(web))
 ///const app =express()
 //app.set('view engine','hbs')
@@ -15,10 +17,10 @@ app.get('', (req, res)=>{
      'Universiy':'CURAJ'
  })
 })
-app.get('/page.html', (req, res)=>{
-var name = req.query.title
-//console.log(name)
-res.render('page', {'title':name})
+app.get('/login.html', (req, res)=>{
+//console.log(req.query)
+res.render('login', {'user':req.query.name,
+'city':req.query.city})
 })
 
 app.listen(3000, ()=>{
