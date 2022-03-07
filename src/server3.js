@@ -16,7 +16,7 @@ app.use(express.static(webdir))
 app.get('', (req, res)=>{
     res.render('index', {
      'path':jspath,
-     'Universiy':'CURAJ Ajmer'
+     'Universiy':'CURAJ Ajme (Rajasthan)'
  })
 })
 app.get('/login.html', (req, res)=>{
