@@ -5,6 +5,7 @@ var webdir = path.join(__dirname,"..", "./website1")
 var viewpath = path.join(__dirname,"..", "./src/views")
 var jspath = path.join(__dirname,"..", "./src/js")
 
+const port = process.env.PORT || 3000
 console.log(viewpath)
 const app = express()
 app.set('view engine','hbs')
@@ -25,6 +26,6 @@ res.render('login', {'user':req.query.name,
 'city':req.query.city})
 })
 
-app.listen(3000, ()=>{
-    console.log("Server is started on port number 3000")
+app.listen(port, ()=>{
+    console.log("Server is started on port number"+port)
 })
